@@ -19,7 +19,12 @@ class Transfer
   end
 
   def execute_transaction
-    sender_new_balance = BankAccount.new(@sender).balance - @amount
-    receiver_new_balance = BankAccount.new(@sender).deposit(@amount)
+    if self.valid? == true
+      sender_new_balance = BankAccount.new(@sender).balance - @amount
+      receiver_new_balance = BankAccount.new(@sender).deposit(@amount)
+      @status = "complete"
+    else
+      @status = "rejected"
+      return "Transaction rejected. Please check your account balance."
   end
 end
