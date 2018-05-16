@@ -15,9 +15,9 @@ class Transfer
     receiver_status = BankAccount.new(@receiver).valid?
     binding.pry
     if sender_status == true && receiver_status == true
-      true
+      return true
     else
-      false
+      return false
     end
   end
 end
