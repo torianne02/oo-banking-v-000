@@ -13,7 +13,6 @@ class Transfer
   def valid?
     sender_status = BankAccount.new(@sender).valid?
     receiver_status = BankAccount.new(@receiver).valid?
-    binding.pry
     if sender_status == true && receiver_status == true
       return true
     else
