@@ -17,4 +17,9 @@ class Transfer
       return false
     end
   end
+
+  def execute_transaction
+    sender_new_balance = BankAccount.new(@sender).balance - @amount
+    receiver_new_balance = BankAccount.new(@sender).deposit(@amount)
+  end
 end
