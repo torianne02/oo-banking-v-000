@@ -7,4 +7,7 @@ class Transfer
     @status = "pending"
     @amount = amount
   end
+
+  def valid?
+    sender_status = BankAccount.new(@sender).valid?
 end
