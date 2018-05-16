@@ -9,8 +9,8 @@ class Transfer
   end
 
   def valid?
-    sender_status = BankAccount.new(@sender).valid?(true)
-    receiver_status = BankAccount.new(@receiver).valid?(true)
+    sender_status = BankAccount.new(@sender).valid?
+    receiver_status = BankAccount.new(@receiver).valid?
     if sender_status == true && receiver_status == true
       true
     else
