@@ -15,10 +15,6 @@ class Transfer
       return true
     else
       return false
-    # if sender_status == true && receiver_status == true
-    #   return true
-    # else
-    #   return false
     end
   end
 end
