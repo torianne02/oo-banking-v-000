@@ -20,7 +20,7 @@ class Transfer
 
   def execute_transaction
     if self.valid? == true
-      sender_new_balance = BankAccount.new(@sender).balance - @amount
+      sender_new_balance = BankAccount.new(@sender).balance = (balance - @amount)
       receiver_new_balance = BankAccount.new(@receiver).deposit(@amount)
       @status = "complete"
     else
