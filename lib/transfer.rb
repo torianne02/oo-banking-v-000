@@ -10,7 +10,7 @@ class Transfer
     @amount = amount
   end
 
-  def valid?(sender, receiver)
+  def valid?
     sender_status = BankAccount.new(@sender).valid?
     receiver_status = BankAccount.new(@receiver).valid?
     if sender_status == true && receiver_status == true
